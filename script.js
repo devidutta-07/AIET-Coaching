@@ -85,7 +85,6 @@ if (contactForm) {
   })
 }
 
-// ===== Smooth Scroll for Navigation Links =====
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault()
@@ -99,30 +98,26 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   })
 })
 
-// ===== Active Navigation Link =====
 window.addEventListener("scroll", () => {
-  const navLinks = document.querySelectorAll(".nav-menu a")
-  navLinks.forEach((link) => {
-    link.classList.remove("active")
-  })
+  const navLinks = document.querySelectorAll(".nav-link")
 
-  // Add active class to current page link
-  const currentPage = window.location.pathname.split("/").pop() || "index.html"
   navLinks.forEach((link) => {
-    if (link.getAttribute("href") === currentPage) {
-      link.classList.add("active")
+    const sectionId = link.getAttribute("href").substring(1)
+    const section = document.getElementById(sectionId)
+
+    if (section) {
+      const sectionTop = section.offsetTop - 100
+      const sectionBottom = sectionTop + section.offsetHeight
+
+      if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
+        navLinks.forEach((l) => l.classList.remove("active"))
+        link.classList.add("active")
+      }
     }
   })
 })
 
-// ===== Initialize Active Link on Page Load =====
 window.addEventListener("load", () => {
-  const navLinks = document.querySelectorAll(".nav-menu a")
-  const currentPage = window.location.pathname.split("/").pop() || "index.html"
-
-  navLinks.forEach((link) => {
-    if (link.getAttribute("href") === currentPage) {
-      link.classList.add("active")
-    }
-  })
+  const navLinks = document.querySelectorAll(".nav-link")
+  navLinks[0].classList.add("active")
 })

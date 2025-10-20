@@ -21,18 +21,19 @@
                     <span></span>
                     <span></span>
                 </button>
+                <!-- Updated navigation links to use anchor links for single-page navigation -->
                 <ul class="nav-menu" id="navMenu">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="courses.html">Courses</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#courses" class="nav-link">Courses</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
                 <h2 class="hero-title">AIET Coaching Center</h2>
@@ -59,11 +60,6 @@
                     <p>Quality education starting from just ₹500. We believe in making tech education accessible to everyone.</p>
                 </div>
                 <div class="card">
-                    <div class="card-icon">🌐</div>
-                    <h3>Offline + Online Hybrid</h3>
-                    <p>Learn at your own pace with flexible offline and online learning options.</p>
-                </div>
-                <div class="card">
                     <div class="card-icon">🎯</div>
                     <h3>Internship & Placement</h3>
                     <p>Get real experience through internships and placement opportunities after course completion.</p>
@@ -77,7 +73,6 @@
         <div class="container">
             <h2 class="section-title">What Our Students Say</h2>
             <div class="testimonials-slider" id="testimonialsSlider">
-                <!-- Added profile images and restructured testimonial cards -->
                 <div class="testimonial-card">
                     <p class="testimonial-text">"AIET helped me learn Python from scratch. The practical approach and affordable fees made it perfect for me!"</p>
                     <div class="testimonial-profile">
@@ -141,6 +136,188 @@
         </div>
     </section>
 
+    <!-- Courses Section -->
+    <section class="courses-section" id="courses">
+        <div class="container">
+            <h2 class="section-title">Our Courses</h2>
+            <p class="section-subtitle">Choose from our range of affordable, practical courses</p>
+            <div class="courses-grid">
+                <div class="course-card">
+                    <img src="/placeholder.svg?height=150&width=280" alt="Python Internship" class="course-image">
+                    <div class="course-content">
+                        <div class="course-header">
+                            <h3>Python Internship</h3>
+                            <span class="course-price">₹500</span>
+                        </div>
+                        <div class="course-details">
+                            <p><strong>Duration:</strong> 4 weeks</p>
+                            <p><strong>Level:</strong> Beginner</p>
+                        </div>
+                        <p class="course-description">Learn Python programming from scratch with practical projects.</p>
+                        <a href="https://forms.google.com/your-form-link" class="btn btn-primary" target="_blank">Enroll Now</a>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <img src="/placeholder.svg?height=150&width=280" alt="MS Office with AI" class="course-image">
+                    <div class="course-content">
+                        <div class="course-header">
+                            <h3>MS Office with AI</h3>
+                            <span class="course-price">₹400</span>
+                        </div>
+                        <div class="course-details">
+                            <p><strong>Duration:</strong> 3 weeks</p>
+                            <p><strong>Level:</strong> Beginner</p>
+                        </div>
+                        <p class="course-description">Master Microsoft Office tools and leverage AI features for productivity.</p>
+                        <a href="https://forms.google.com/your-form-link" class="btn btn-primary" target="_blank">Enroll Now</a>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <img src="/placeholder.svg?height=150&width=280" alt="Web Development Basics" class="course-image">
+                    <div class="course-content">
+                        <div class="course-header">
+                            <h3>Web Development Basics</h3>
+                            <span class="course-price">₹600</span>
+                        </div>
+                        <div class="course-details">
+                            <p><strong>Duration:</strong> 6 weeks</p>
+                            <p><strong>Level:</strong> Beginner</p>
+                        </div>
+                        <p class="course-description">Learn HTML, CSS, and JavaScript to build responsive websites.</p>
+                        <a href="https://forms.google.com/your-form-link" class="btn btn-primary" target="_blank">Enroll Now</a>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <img src="/placeholder.svg?height=150&width=280" alt="Data Science Basics" class="course-image">
+                    <div class="course-content">
+                        <div class="course-header">
+                            <h3>Data Science Basics</h3>
+                            <span class="course-price">₹700</span>
+                        </div>
+                        <div class="course-details">
+                            <p><strong>Duration:</strong> 8 weeks</p>
+                            <p><strong>Level:</strong> Intermediate</p>
+                        </div>
+                        <p class="course-description">Introduction to data analysis, visualization, and machine learning concepts.</p>
+                        <a href="https://forms.google.com/your-form-link" class="btn btn-primary" target="_blank">Enroll Now</a>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <img src="/placeholder.svg?height=150&width=280" alt="Spoken English Add-on" class="course-image">
+                    <div class="course-content">
+                        <div class="course-header">
+                            <h3>Spoken English Add-on</h3>
+                            <span class="course-price">₹300</span>
+                        </div>
+                        <div class="course-details">
+                            <p><strong>Duration:</strong> 4 weeks</p>
+                            <p><strong>Level:</strong> All Levels</p>
+                        </div>
+                        <p class="course-description">Improve your English communication skills for professional conversations.</p>
+                        <a href="https://forms.google.com/your-form-link" class="btn btn-primary" target="_blank">Enroll Now</a>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <img src="/placeholder.svg?height=150&width=280" alt="Digital Marketing Basics" class="course-image">
+                    <div class="course-content">
+                        <div class="course-header">
+                            <h3>Digital Marketing Basics</h3>
+                            <span class="course-price">₹500</span>
+                        </div>
+                        <div class="course-details">
+                            <p><strong>Duration:</strong> 5 weeks</p>
+                            <p><strong>Level:</strong> Beginner</p>
+                        </div>
+                        <p class="course-description">Learn SEO, social media marketing, and content creation strategies.</p>
+                        <a href="https://forms.google.com/your-form-link" class="btn btn-primary" target="_blank">Enroll Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <p class="section-subtitle">Get in touch with AIET Coaching Center</p>
+
+            <div class="contact-grid">
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <h2>Get In Touch</h2>
+                    <div class="info-item">
+                        <h3>📧 Email</h3>
+                        <p><a href="mailto:biswalanil2004@gmail.com">biswalanil2004@gmail.com</a></p>
+                    </div>
+                    <div class="info-item">
+                        <h3>📞 Phone</h3>
+                        <p><a href="tel:+918917332516">+91 89173 32516</a></p>
+                    </div>
+                    <div class="info-item">
+                        <h3>💬 WhatsApp</h3>
+                        <p><a href="https://wa.me/918917332516" target="_blank">Chat with us on WhatsApp</a></p>
+                    </div>
+                    <div class="info-item">
+                        <h3>📍 Location</h3>
+                        <p>AIET Coaching Center<br>Rural Area, India</p>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper">
+                    <h2>Send us a Message</h2>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- QR Section -->
+            <!-- <div class="qr-section-inline">
+                <h3 class="subsection-title">Connect on WhatsApp</h3>
+                <div class="qr-container">
+                <p>Scan the QR code below to connect with our community directly on WhatsApp</p>
+                    <img src="images\Whatsup.jpg"height="300"width="300" alt="WhatsApp QR Code" class="qr-code">
+                    <p>Or click <a href="https://chat.whatsapp.com/BiQW4tSAUPAEw2o1KqcSaT" target="_blank">here</a> to open WhatsApp</p>
+                </div>
+            </div> -->
+
+            <!-- Map Section -->
+            <!-- <div class="map-section-inline">
+                <h3 class="subsection-title">Find Us</h3>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3600.0!2d0!3d0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMCww!5e0!3m2!1sen!2sin!4v1234567890" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -152,10 +329,10 @@
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#courses">Courses</a></li>
                         <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
