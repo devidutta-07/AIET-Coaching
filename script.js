@@ -32,27 +32,28 @@ if (hamburger) {
   })
 }
 
-// ===== Testimonials Slider =====
-const prevBtn = document.getElementById("prevBtn")
-const nextBtn = document.getElementById("nextBtn")
+// ===== Testimonials Auto-Loop Slider =====
 const testimonialsSlider = document.querySelector(".testimonials-slider")
 
-if (prevBtn && nextBtn && testimonialsSlider) {
+if (testimonialsSlider) {
+  let scrollPosition = 0
   const scrollAmount = 350
+  const autoScrollInterval = 5000 // Auto-scroll every 5 seconds
 
-  prevBtn.addEventListener("click", () => {
-    testimonialsSlider.scrollBy({
-      left: -scrollAmount,
+  // Auto-scroll testimonials
+  setInterval(() => {
+    scrollPosition += scrollAmount
+
+    // Reset to beginning when reaching the end
+    if (scrollPosition >= testimonialsSlider.scrollWidth - testimonialsSlider.clientWidth) {
+      scrollPosition = 0
+    }
+
+    testimonialsSlider.scrollTo({
+      left: scrollPosition,
       behavior: "smooth",
     })
-  })
-
-  nextBtn.addEventListener("click", () => {
-    testimonialsSlider.scrollBy({
-      left: scrollAmount,
-      behavior: "smooth",
-    })
-  })
+  }, autoScrollInterval)
 }
 
 // ===== Contact Form Handling =====
