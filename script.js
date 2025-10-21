@@ -56,7 +56,14 @@ if (testimonialsSlider) {
   }, autoScrollInterval)
 }
 
-// ===== Contact Form Handling =====
+function trackEvent(eventName, eventData = {}) {
+  const gtag = window.gtag // Declare gtag variable
+  if (typeof gtag !== "undefined") {
+    gtag("event", eventName, eventData)
+  }
+}
+
+// Track form submissions
 const contactForm = document.getElementById("contactForm")
 
 if (contactForm) {
@@ -68,6 +75,11 @@ if (contactForm) {
     const phone = document.getElementById("phone").value
     const subject = document.getElementById("subject").value
     const message = document.getElementById("message").value
+
+    trackEvent("form_submission", {
+      form_name: "contact_form",
+      subject: subject,
+    })
 
     // Create mailto link
     const mailtoLink = `mailto:biswalanil2004@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
@@ -84,6 +96,34 @@ if (contactForm) {
     contactForm.reset()
   })
 }
+
+document.querySelectorAll(".btn-primary, .btn-secondary").forEach((button) => {
+  button.addEventListener("click", function () {
+    const buttonText = this.textContent.trim()
+    trackEvent("button_click", {
+      button_text: buttonText,
+      button_type: this.className,
+    })
+  })
+})
+
+document.querySelectorAll(".course-card").forEach((card) => {
+  card.addEventListener("click", function () {
+    const courseTitle = this.querySelector("h3").textContent
+    trackEvent("course_card_click", {
+      course_name: courseTitle,
+    })
+  })
+})
+
+document.querySelectorAll(".nav-link").forEach((link) => {
+  link.addEventListener("click", function () {
+    const linkText = this.textContent.trim()
+    trackEvent("navigation_click", {
+      nav_item: linkText,
+    })
+  })
+})
 
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
