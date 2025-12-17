@@ -1065,30 +1065,16 @@ a:hover {
   .footer-section {
     padding: 1.2rem;
   }
+
+  .btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
 }
 
 @media (max-width: 480px) {
-  .container {
-    padding: 0 15px;
-  }
-
-  .hero {
-    padding: 3rem 0;
-  }
-
-  /* Hero section responsive - full width on mobile */
-  .hero-wrapper {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .hero-image-container {
-    max-width: 280px;
-    margin: 0 auto;
-  }
-
   .hero-title {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .hero-subtitle {
@@ -1099,39 +1085,32 @@ a:hover {
     font-size: 1rem;
   }
 
-  .cards-grid {
-    grid-template-columns: 1fr;
+  .section-title {
+    font-size: 1.6rem;
   }
 
-  .courses-grid {
-    grid-template-columns: 1fr;
+  .section-subtitle {
+    font-size: 1rem;
+  }
+
+  .card {
+    padding: 2rem;
   }
 
   .course-header {
     flex-direction: column;
-    gap: 0.5rem;
+    align-items: start;
   }
 
   .course-price {
     align-self: flex-start;
   }
 
-  .btn {
-    padding: 0.8rem 1.5rem;
-    font-size: 0.9rem;
+  .contact-grid {
+    grid-template-columns: 1fr;
   }
 
-  .social-links {
-    gap: 0.6rem;
-  }
-
-  .social-links a {
-    width: 32px;
-    height: 32px;
-    font-size: 0.9rem;
-  }
-
-  .section-title {
-    font-size: 1.8rem;
+  .hero-image-container {
+    max-width: 280px;
   }
 }

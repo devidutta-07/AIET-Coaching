@@ -1,8 +1,16 @@
-// SEO Configuration and Keywords for AIET Coaching Center
+// SEO Configuration and Keywords for Advance Institute of Engineering and Technology (AIET) Coaching Center
 // Target: Odisha Region - Jajpur Focus
 
 export const SEO_CONFIG = {
   primaryKeywords: [
+    "Advance Institute of Engineering and Technology",
+    "AIET Jajpur",
+    "AIET Odisha",
+    "Advance Institute of Engineering and Technology Jajpur",
+    "PGDCA online course",
+    "PGDCA online in Odisha",
+    "online PGDCA in Jajpur",
+    "PGDCA online classes",
     "PGDCA in Jajpur",
     "PGDCA in Odisha",
     "computer courses in Jajpur",
@@ -11,11 +19,20 @@ export const SEO_CONFIG = {
     "web development course Jajpur",
     "affordable computer courses in Jajpur",
     "computer training Jajpur",
-    "tech education rural Odisha",
+    "online computer courses Odisha",
     "best computer institute Jajpur",
   ],
 
   longTailKeywords: [
+    "Advance Institute of Engineering and Technology PGDCA online",
+    "AIET coaching center Jajpur",
+    "Advance Institute of Engineering and Technology online courses",
+    "best PGDCA online course in Odisha",
+    "PGDCA online with offline labs Jajpur",
+    "affordable PGDCA online courses",
+    "PGDCA online government certificate",
+    "online PGDCA course near me",
+    "PGDCA online classes in Jajpur Odisha",
     "best computer institute near me Jajpur",
     "python course in Jajpur Odisha",
     "digital marketing course Jajpur",
@@ -28,39 +45,45 @@ export const SEO_CONFIG = {
     "placement support tech courses Odisha",
     "internship opportunities Jajpur",
     "computer classes Nandipur Chaka",
+    "online computer training with certification",
+    "PGDCA online for working professionals",
   ],
 
   // Local Keywords
   localKeywords: [
+    "Advance Institute of Engineering and Technology Jajpur",
+    "AIET coaching center Jajpur",
     "coaching center Jajpur",
     "computer classes Nandipur Chaka",
     "tech training Odisha",
     "education center Jajpur",
     "skill development Odisha",
     "career training Jajpur",
+    "online courses Jajpur",
+    "online learning Odisha",
   ],
 
   // Meta Descriptions
   pages: {
     home: {
-      title: "PGDCA Courses in Jajpur, Odisha | AI & Web Development Training | AIET",
+      title: "PGDCA Online | Advance Institute of Engineering and Technology (AIET), Jajpur, Odisha",
       description:
-        "AIET Coaching Center offers affordable PGDCA courses in Jajpur, Odisha. Learn Python, Web Development, AI courses, and Digital Marketing. Best computer institute in Jajpur with government certificate PGDCA training.",
+        "Advance Institute of Engineering and Technology (AIET) Coaching Center offers affordable PGDCA online courses in Jajpur, Odisha. Learn online with theory classes and offline hands-on labs. Python, Web Development, AI courses, and Digital Marketing. Best online computer institute in Jajpur with government certificate PGDCA training.",
     },
     courses: {
-      title: "Computer Courses in Jajpur, Odisha — PGDCA, Python, Web Dev | AIET",
+      title: "PGDCA Online & Computer Courses | Advance Institute of Engineering and Technology, Jajpur, Odisha",
       description:
-        "Explore AIET's affordable computer courses: PGDCA government certificate, Web Development, Python with AI, MS Office with AI. Practical projects, internship & placement help in Jajpur, Odisha.",
+        "Explore Advance Institute of Engineering and Technology's affordable online computer courses: PGDCA online with government certificate, Web Development, Python with AI, MS Office with AI. Online theory + offline practical labs, internship & placement help in Jajpur, Odisha.",
     },
     about: {
-      title: "About AIET Coaching Center in Jajpur, Odisha | Computer Training Institute",
+      title: "About Advance Institute of Engineering and Technology (AIET) | Online Computer Training, Jajpur, Odisha",
       description:
-        "Learn about AIET Coaching Center in Jajpur, Odisha. Best computer institute providing affordable PGDCA, Python, Web Development and AI courses for rural students with placement support.",
+        "Learn about Advance Institute of Engineering and Technology (AIET) Coaching Center in Jajpur, Odisha. Best online computer institute providing affordable PGDCA online courses, Python, Web Development and AI courses for rural students with placement support.",
     },
     contact: {
-      title: "Contact AIET Coaching Center — Jajpur, Odisha",
+      title: "Contact Advance Institute of Engineering and Technology (AIET) — Jajpur, Odisha",
       description:
-        "Contact AIET Coaching Center in Nandipur Chaka, Jajpur. Call +91 89173 32516 or message on WhatsApp to enroll in computer courses.",
+        "Contact Advance Institute of Engineering and Technology (AIET) Coaching Center in Nandipur Chaka, Jajpur. Call +91 89173 32516 or message on WhatsApp to enroll in PGDCA online and computer courses.",
     },
   },
 
@@ -77,7 +100,7 @@ export const SEO_CONFIG = {
 
   // Business Information
   business: {
-    name: "AIET Coaching Center",
+    name: "Advance Institute of Engineering and Technology (AIET) Coaching Center",
     phone: "+918917332516",
     email: "aietclasses@gmail.com",
     address: "Nandipur Chaka, Jajpur, Odisha 755006",

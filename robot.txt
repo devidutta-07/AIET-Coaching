@@ -1,4 +1,4 @@
-# AIET Coaching Center - robots.txt
+# Advance Institute of Engineering and Technology (AIET) Coaching Center - robots.txt
 # Allow search engines to crawl all pages
 
 User-agent: *
