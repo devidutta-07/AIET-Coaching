@@ -82,7 +82,7 @@ if (contactForm) {
     })
 
     // Create mailto link
-    const mailtoLink = `mailto:biswalanil2004@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+    const mailtoLink = `mailto:aietclasses4@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
       `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`,
     )}`
 

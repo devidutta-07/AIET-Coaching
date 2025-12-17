@@ -79,7 +79,7 @@ export const SEO_CONFIG = {
   business: {
     name: "AIET Coaching Center",
     phone: "+918917332516",
-    email: "biswalanil2004@gmail.com",
+    email: "aietclasses@gmail.com",
     address: "Nandipur Chaka, Jajpur, Odisha 755006",
     city: "Jajpur",
     state: "Odisha",
