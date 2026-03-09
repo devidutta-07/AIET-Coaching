@@ -82,7 +82,7 @@ if (contactForm) {
     })
 
     // Create mailto link
-    const mailtoLink = `mailto:aietclasses4@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+    const mailtoLink = `mailto:aietclasses@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
       `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`,
     )}`
 
@@ -161,3 +161,93 @@ window.addEventListener("load", () => {
   const navLinks = document.querySelectorAll(".nav-link")
   navLinks[0].classList.add("active")
 })
+
+// ===== AIET Redesign Animations =====
+
+// Initialize AOS (Animate on Scroll)
+if (typeof AOS !== 'undefined') {
+  AOS.init({
+    duration: 800,
+    once: true,
+    offset: 100
+  });
+}
+
+// Particle.js Configuration
+if (document.getElementById('particles-js') && typeof particlesJS !== 'undefined') {
+  particlesJS('particles-js', {
+    "particles": {
+      "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+      "color": { "value": "#00f0ff" },
+      "shape": { "type": "circle" },
+      "opacity": { "value": 0.5, "random": true },
+      "size": { "value": 3, "random": true },
+      "line_linked": { "enable": true, "distance": 150, "color": "#8a2be2", "opacity": 0.4, "width": 1 },
+      "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
+    },
+    "interactivity": {
+      "detect_on": "window",
+      "events": {
+        "onhover": { "enable": true, "mode": "grab" },
+        "onclick": { "enable": true, "mode": "push" },
+        "resize": true
+      },
+      "modes": {
+        "grab": { "distance": 140, "line_linked": { "opacity": 1 } },
+        "push": { "particles_nb": 4 }
+      }
+    },
+    "retina_detect": true
+  });
+}
+
+// Counter Animation Logic for Stats section
+document.addEventListener("DOMContentLoaded", () => {
+  const counters = document.querySelectorAll('.counter');
+
+  const animateCounters = () => {
+    counters.forEach(counter => {
+      const target = +counter.getAttribute('data-target');
+      const speed = 200;
+
+      const updateCount = () => {
+        const count = +counter.innerText;
+        const inc = target / speed;
+
+        if (count < target) {
+          counter.innerText = Math.ceil(count + inc);
+          setTimeout(updateCount, 15);
+        } else {
+          // ensure it hits the exact target
+          counter.innerText = target;
+        }
+      };
+      updateCount();
+    });
+  };
+
+  const statsSection = document.querySelector('.stats-section');
+  if (statsSection) {
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        animateCounters();
+        observer.disconnect();
+      }
+    }, { threshold: 0.5 });
+    observer.observe(statsSection);
+  }
+});
+
+// Navbar Glassmorphism scroll effect
+window.addEventListener("scroll", () => {
+  const navbar = document.querySelector(".navbar");
+  if (navbar) {
+    if (window.scrollY > 50) {
+      navbar.style.background = "rgba(10, 10, 15, 0.85)";
+      navbar.style.boxShadow = "var(--shadow-primary)";
+    } else {
+      navbar.style.background = "var(--glass-bg)";
+      navbar.style.boxShadow = "none";
+    }
+  }
+});

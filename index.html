@@ -52,6 +52,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <!-- Google Analytics GA4 -->
     <script
       async
@@ -72,8 +74,11 @@
       <div class="container">
         <div class="nav-wrapper">
           <div class="logo">
-            <h1>AIET</h1>
-            <p>Coaching Center</p>
+            <img src="images/Logo.webp" alt="AIET Coaching Center Logo" class="brand-logo" onerror="this.outerHTML=''" />
+            <div class="logo-text">
+              <h1>AIET</h1>
+              <p>Coaching Center</p>
+            </div>
           </div>
           <button class="hamburger" id="hamburger">
             <span></span>
@@ -92,7 +97,8 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-      <div class="container">
+      <div id="particles-js"></div>
+      <div class="container hero-container">
         <div class="hero-wrapper">
           <div class="hero-content">
             <!-- Updated H1 with primary keyword PGDCA in Jajpur -->
@@ -160,6 +166,29 @@
               Get real experience through internships and placement
               opportunities after completing our computer courses in Jajpur.
             </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="stat-icon"><i class="fas fa-user-graduate"></i></div>
+            <h3 class="counter" data-target="500">0</h3>
+            <p>Students Trained +</p>
+          </div>
+          <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="stat-icon"><i class="fas fa-wallet"></i></div>
+            <h3>Affordable</h3>
+            <p>Course Fees</p>
+          </div>
+          <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="stat-icon"><i class="fas fa-briefcase"></i></div>
+            <h3>100%</h3>
+            <p>Internship Support</p>
           </div>
         </div>
       </div>
@@ -512,31 +541,27 @@
           </div>
 
           <!-- Contact Form -->
-          <div class="contact-form-wrapper">
+          <div class="contact-form-wrapper" data-aos="fade-left">
             <h2>Send us a Message</h2>
             <form class="contact-form" id="contactForm">
               <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" required />
+                <input type="text" id="name" name="name" placeholder="Full Name" required />
               </div>
               <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" required />
+                <input type="email" id="email" name="email" placeholder="Email Address" required />
               </div>
               <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" />
+                <input type="tel" id="phone" name="phone" placeholder="Phone Number" />
               </div>
               <div class="form-group">
-                <label for="subject">Subject</label>
-                <input type="text" id="subject" name="subject" required />
+                <input type="text" id="subject" name="subject" placeholder="Subject" required />
               </div>
               <div class="form-group">
-                <label for="message">Message</label>
                 <textarea
                   id="message"
                   name="message"
                   rows="5"
+                  placeholder="Message"
                   required
                 ></textarea>
               </div>
@@ -650,6 +675,12 @@
         };
     </script>
     <script defer src="/_vercel/insights/script.js"></script>
+
+    <!-- GSAP, Particles.js, AOS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script src="script.js"></script>
   </body>
