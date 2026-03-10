@@ -173,33 +173,8 @@ if (typeof AOS !== 'undefined') {
   });
 }
 
-// Particle.js Configuration
-if (document.getElementById('particles-js') && typeof particlesJS !== 'undefined') {
-  particlesJS('particles-js', {
-    "particles": {
-      "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
-      "color": { "value": "#00f0ff" },
-      "shape": { "type": "circle" },
-      "opacity": { "value": 0.5, "random": true },
-      "size": { "value": 3, "random": true },
-      "line_linked": { "enable": true, "distance": 150, "color": "#8a2be2", "opacity": 0.4, "width": 1 },
-      "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
-    },
-    "interactivity": {
-      "detect_on": "window",
-      "events": {
-        "onhover": { "enable": true, "mode": "grab" },
-        "onclick": { "enable": true, "mode": "push" },
-        "resize": true
-      },
-      "modes": {
-        "grab": { "distance": 140, "line_linked": { "opacity": 1 } },
-        "push": { "particles_nb": 4 }
-      }
-    },
-    "retina_detect": true
-  });
-}
+// Particles layer removed as per Hologram Face design specifications
+
 
 // Counter Animation Logic for Stats section
 document.addEventListener("DOMContentLoaded", () => {
@@ -250,4 +225,156 @@ window.addEventListener("scroll", () => {
       navbar.style.boxShadow = "none";
     }
   }
+});
+
+// ===== Holographic AI Face (Canvas 2D Engine) =====
+document.addEventListener("DOMContentLoaded", () => {
+  const canvas = document.getElementById("hero-ai-face-canvas");
+  const wrapper = document.getElementById("hero-lottie-wrapper"); // Reusing the wrapper ID
+
+  if (!canvas || !wrapper) return;
+
+  const ctx = canvas.getContext("2d");
+  let width, height;
+
+  // Responsive Scaling
+  function resize() {
+    width = wrapper.clientWidth;
+    height = wrapper.clientHeight;
+    // Handle High DPI displays for crisp rendering
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width = width * dpr;
+    canvas.height = height * dpr;
+    ctx.scale(dpr, dpr);
+  }
+
+  window.addEventListener("resize", resize);
+  resize();
+
+  let time = 0;
+  let eyeBlink = 1; // 1 = open, 0 = closed
+  let isBlinking = false;
+  let blinkTimer = 0;
+
+  // Subtle Mouse Parallax
+  let mouseX = 0;
+  let mouseY = 0;
+  document.addEventListener("mousemove", (e) => {
+    mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+    mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+  });
+
+  function drawFace() {
+    ctx.clearRect(0, 0, width, height);
+
+    const centerX = width / 2 + mouseX * 15;
+    const centerY = height / 2 + Math.sin(time * 0.05) * 8 + mouseY * 15; // Hovering
+    const faceRadius = Math.min(width, height) * 0.35;
+
+    // 1. Outer Holographic Scanning Ring
+    ctx.strokeStyle = "rgba(0, 240, 255, 0.3)";
+    ctx.lineWidth = 2;
+    ctx.setLineDash([15, 10]);
+    ctx.beginPath();
+    ctx.arc(centerX, centerY, faceRadius * 1.15, time * 0.02, Math.PI * 2 + time * 0.02);
+    ctx.stroke();
+
+    // 2. Inner Face Shield Outline (Hexagonal AI feel)
+    ctx.setLineDash([]);
+    ctx.strokeStyle = "rgba(138, 43, 226, 0.6)"; // Purple accent
+    ctx.shadowColor = "rgba(138, 43, 226, 0.8)";
+    ctx.shadowBlur = 15;
+    ctx.lineWidth = 3;
+
+    ctx.beginPath();
+    ctx.moveTo(centerX - faceRadius, centerY - faceRadius * 0.5);
+    ctx.lineTo(centerX, centerY - faceRadius);
+    ctx.lineTo(centerX + faceRadius, centerY - faceRadius * 0.5);
+    ctx.lineTo(centerX + faceRadius, centerY + faceRadius * 0.5);
+    ctx.lineTo(centerX, centerY + faceRadius);
+    ctx.lineTo(centerX - faceRadius, centerY + faceRadius * 0.5);
+    ctx.closePath();
+    ctx.stroke();
+
+    // 3. Scanning Data Line (Moves up and down face)
+    const scanY = (Math.sin(time * 0.08) * 0.5 + 0.5) * faceRadius * 2 - faceRadius;
+    ctx.strokeStyle = "rgba(0, 240, 255, 0.4)";
+    ctx.shadowColor = "rgba(0, 240, 255, 0.6)";
+    ctx.shadowBlur = 10;
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    ctx.moveTo(centerX - faceRadius * 0.8, centerY + scanY);
+    ctx.lineTo(centerX + faceRadius * 0.8, centerY + scanY);
+    ctx.stroke();
+
+    // 4. Glowing Digital Eyes
+    // Blink logic (Randomly trigger blink)
+    blinkTimer++;
+    if (blinkTimer > 180) {
+      if (Math.random() > 0.8) isBlinking = true;
+      blinkTimer = 0;
+    }
+
+    if (isBlinking) {
+      eyeBlink -= 0.15;
+      if (eyeBlink <= 0) {
+        eyeBlink = 0;
+        isBlinking = false;
+      }
+    } else if (eyeBlink < 1) {
+      eyeBlink += 0.08;
+    }
+
+    ctx.fillStyle = "rgba(0, 240, 255, 0.9)";
+    ctx.shadowColor = "rgba(0, 240, 255, 1)";
+    ctx.shadowBlur = 20; // Intense neon glow
+
+    const eyeWidth = faceRadius * 0.3;
+    const eyeHeight = faceRadius * 0.12;
+    const eyeGap = faceRadius * 0.35;
+    const eyeY = centerY - faceRadius * 0.2;
+
+    // Left Eye Rectangle
+    ctx.beginPath();
+    ctx.roundRect(centerX - eyeGap - eyeWidth / 2, eyeY - (eyeHeight * eyeBlink) / 2, eyeWidth, Math.max(2, eyeHeight * eyeBlink), 4);
+    ctx.fill();
+
+    // Right Eye Rectangle
+    ctx.beginPath();
+    ctx.roundRect(centerX + eyeGap - eyeWidth / 2, eyeY - (eyeHeight * eyeBlink) / 2, eyeWidth, Math.max(2, eyeHeight * eyeBlink), 4);
+    ctx.fill();
+
+    // 5. Audio/System Waveform (Mouth region)
+    const mouthY = centerY + faceRadius * 0.45;
+    const mouthWidth = faceRadius * 0.4;
+
+    ctx.strokeStyle = "rgba(138, 43, 226, 0.8)";
+    ctx.shadowColor = "rgba(138, 43, 226, 0.9)";
+    ctx.shadowBlur = 10;
+    ctx.lineWidth = 3;
+
+    ctx.beginPath();
+    for (let i = 0; i <= 8; i++) {
+      const x = centerX - mouthWidth / 2 + (mouthWidth / 8) * i;
+      const baseHeight = (i === 0 || i === 8) ? 2 : (i % 2 === 0 ? 6 : 10);
+      // Animate the height smoothly like an audio visualizer
+      const dynamicHeight = Math.max(1, baseHeight + Math.sin(time * 0.15 + i) * 4);
+
+      ctx.moveTo(x, mouthY - dynamicHeight / 2);
+      ctx.lineTo(x, mouthY + dynamicHeight / 2);
+    }
+    ctx.stroke();
+
+    // Clear shadow state for next loop iteration
+    ctx.shadowBlur = 0;
+  }
+
+  // Master Render Loop
+  function animate() {
+    drawFace();
+    time++;
+    requestAnimationFrame(animate);
+  }
+
+  animate();
 });

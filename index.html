@@ -97,7 +97,6 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-      <div id="particles-js"></div>
       <div class="container hero-container">
         <div class="hero-wrapper">
           <div class="hero-content">
@@ -121,15 +120,8 @@
             >
           </div>
           <div class="hero-image-section">
-            <div class="hero-image-container">
-              <img
-                src="images\hero.webp"
-                height="400"
-                width="400"
-                alt="AIET Coaching Center - Computer training and AI courses in Jajpur, Odisha"
-                class="hero-image"
-              />
-              <div class="hero-image-overlay"></div>
+            <div class="hero-image-container" id="hero-lottie-wrapper">
+              <canvas id="hero-ai-face-canvas"></canvas>
             </div>
           </div>
         </div>
@@ -172,7 +164,7 @@
     </section>
 
     <!-- Stats Section -->
-    <section class="stats-section">
+    <!-- <section class="stats-section">
       <div class="container">
         <div class="stats-grid">
           <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
@@ -192,7 +184,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- Testimonials
     <section class="testimonials">
@@ -676,10 +668,9 @@
     </script>
     <script defer src="/_vercel/insights/script.js"></script>
 
-    <!-- GSAP, Particles.js, AOS -->
+    <!-- GSAP, AOS, Lottie Web -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script src="script.js"></script>
