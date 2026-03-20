@@ -378,3 +378,81 @@ document.addEventListener("DOMContentLoaded", () => {
 
   animate();
 });
+// ===== CHATBOT FUNCTIONALITY =====
+
+const toggleBtn = document.getElementById("chatbot-toggle");
+const chatBox = document.getElementById("chatbot-box");
+const closeBtn = document.getElementById("chatbot-close");
+const sendBtn = document.getElementById("chatbot-send");
+const input = document.getElementById("chatbot-input");
+const messages = document.getElementById("chatbot-messages");
+
+// Open chat
+toggleBtn.addEventListener("click", () => {
+  chatBox.style.display = "flex";
+  toggleBtn.style.display = "none";
+});
+
+// Close chat
+closeBtn.addEventListener("click", () => {
+  chatBox.style.display = "none";
+  toggleBtn.style.display = "flex";
+});
+
+// Send message on button click
+sendBtn.addEventListener("click", sendMessage);
+
+// Send message on Enter key
+input.addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    sendMessage();
+  }
+});
+
+// ===== MAIN FUNCTION =====
+async function sendMessage() {
+  const text = input.value.trim();
+  if (!text) return;
+
+  // Add user message
+  addMessage(text, "user");
+
+  input.value = "";
+
+  // Show typing
+  const typing = addMessage("Typing...", "bot");
+
+  try {
+    const res = await fetch("https://your-api.onrender.com/chat", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ message: text })
+    });
+
+    const data = await res.json();
+
+    typing.remove();
+
+    addMessage(data.response, "bot");
+
+  } catch (error) {
+    typing.remove();
+    addMessage("Error connecting to AI 😢", "bot");
+  }
+}
+
+// ===== ADD MESSAGE FUNCTION =====
+function addMessage(text, sender) {
+  const msg = document.createElement("div");
+
+  msg.classList.add(sender === "user" ? "user-message" : "bot-message");
+  msg.innerText = text;
+
+  messages.appendChild(msg);
+
+  messages.scrollTop = messages.scrollHeight;
+
+  return msg;
+}
